@@ -1,0 +1,14 @@
+com\qa\CinemaApplication.class
+com\qa\persistence\domain\Transaction.class
+com\qa\constants\Constants.class
+com\qa\controller\SeatsController.class
+com\qa\business\iSeatsService.class
+com\qa\controller\BookingController.class
+com\qa\persistence\domain\Screen.class
+com\qa\service\MovieService.class
+com\qa\controller\MovieController.class
+com\qa\persistence\domain\Booking.class
+com\qa\persistence\domain\Movie.class
+com\qa\business\TransactionService.class
+com\qa\persistence\domain\MovieInfo.class
+com\qa\persistence\domain\Seats.class
