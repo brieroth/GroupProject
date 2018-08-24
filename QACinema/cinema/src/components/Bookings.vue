@@ -33,7 +33,7 @@
         <label for="bookingDate">Enter date: </label>
         <input type="date" id="bookingDate" name="booking_date" min="2018-01-01" max="2019-01-01" required v-model ="details.booking_date">
         <span class="validity"></span><br>
-        <button type="submit" name="submit" value="Submit" v-on:click="sendtoAPI()"></button>
+        <button type="submit" name="submit" value="Submit" v-on:click="addBooking()"></button>
       </form>
           </div>
     </body>
@@ -53,30 +53,14 @@ export default {
     }
   },
   methods: {
-    sendtoAPI() {
-      let newAccount = {
-        'name': this.details.name,
-        'time': this.details.time,
-        'booking_date': this.details.booking_date,
-        'booking_movie': this.details.booking_movie
-      }
-      console.log(newAccount);
-      axios.post('http://localhost:8080/booking', {
-        'name': this.details.name,
-        'time': this.details.time,
-        'booking_date': this.details.booking_date,
-        'booking_movie': this.details.booking_movie
-      }).then(response => {
-        console.log(response)
-        console.log(this.name)
-        console.log(this.time)
-      })
-        .catch(e => {
-          console.log(e)
-        })
-    }
+    addBooking() {
+    let url = 'http://localhost:8080/booking/book';
+    axios.post(url, this.details).then((response) => {
+      console.log(response)
+    })}
   }
-}
+  }
+
 </script>
 
 <style scoped>
