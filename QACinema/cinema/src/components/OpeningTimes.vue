@@ -98,6 +98,17 @@
         </div>
       </div>
     </div>
+   <div class="main" style="padding:5%; color:white;">
+
+     <h1>Nearby conveniences</h1>
+     <p>Surrounding the cinema are numerous other places to take advantage of. </p>
+     <h3>Shopping</h3>
+     <p>Manchester Arndale </p>
+     <h3>Eating, drinking</h3>
+     <p>No shortage of city cafes and restaurants, especially Costa. </p>
+
+
+   </div>
     </div>
       </TABLE><br>
     <!--</body>-->

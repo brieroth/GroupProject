@@ -1,7 +1,7 @@
 <template>
 <div class="parallax">
   <navigation/>
-<div style="padding: 5% 0 17% 0">
+  <div style="padding: 5% 0 17% 0">
   <table width="60%" border="0" align="center">
     <div class="row">
       <div id="login_div" class="main-div" style="background-color:#b7b3bb;" >
