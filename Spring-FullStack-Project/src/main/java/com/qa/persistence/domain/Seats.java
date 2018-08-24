@@ -7,48 +7,32 @@ public class Seats {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long seats_id;
-    private String seat_status;
-    private Long screen_id;
+    private int seats_id;
 
-    protected Seats(){}
+    private int seat_num;
 
-    public Seats(String seat_status, Long screen_id) {
-        this.seat_status = seat_status;
-        this.screen_id = screen_id;
+    protected Seats() {
     }
 
-    public Long getSeats_id() {
+    public Seats(int seats_id, int seat_num) {
+        this.seats_id = seats_id;
+        this.seat_num = seat_num;
+    }
+
+    public int getSeats_id() {
         return seats_id;
     }
 
-    public void setSeats_id(Long seats_id) {
+    public void setSeats_id(int seats_id) {
         this.seats_id = seats_id;
     }
 
-    public String getSeat_status() {
-        return seat_status;
+    public int getSeat_num() {
+        return seat_num;
     }
 
-    public void setSeat_status(String seat_status) {
-        this.seat_status = seat_status;
+    public void setSeat_num(int seat_num) {
+        this.seat_num = seat_num;
     }
-
-    public Long getScreen_id() {
-        return screen_id;
-    }
-
-    public void setScreen_id(Long screen_id) {
-        this.screen_id = screen_id;
-    }
-
-    @Override
-    public String toString() {
-        return "Seats{" +
-                "seats_id=" + seats_id +
-                ", seat_status='" + seat_status + '\'' +
-                ", screen_id=" + screen_id +
-                '}';
-    }
-
 }
+

@@ -35,7 +35,7 @@
         </div>
       </div>
     <div>
-  </div>
+    </div>
     <Footer/>
   </div>
 </template>
@@ -56,11 +56,10 @@ export default {
     }
   },
   mounted() {
-    var reqURL = 'http://localhost:8080/movie/current-movies/'
-    axios.get(reqURL)
+    axios.get('http://localhost:8080/movie/current-movies/')
       .then(response => {
           this.movies = response.data;
-          console.log(response.data)
+          console.log('response: ' + response.data)
         }
       )
       .catch((err) => {

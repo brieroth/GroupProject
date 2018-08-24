@@ -9,6 +9,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/seats")
 @ResponseBody
+@CrossOrigin(origins = "http://localhost:8081")
 public class SeatsController {
 
     @Autowired
@@ -26,20 +27,6 @@ public class SeatsController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Seats add(@RequestBody Seats seats){
         return iSeatsService.save(seats);
-    }
-
-    @RequestMapping(value = "reserve/{id}", method = RequestMethod.PUT)
-    public Seats reserveSeat(@PathVariable Long id){
-        Seats existingSeating = iSeatsService.findById(id).get();
-        existingSeating.setSeat_status("Reserved");
-        return iSeatsService.saveAndFlush(existingSeating);
-    }
-
-    @RequestMapping(value = "unreserve/{id}", method = RequestMethod.PUT)
-    public Seats unreserveSeat(@PathVariable Long id){
-        Seats existingSeat = iSeatsService.findById(id).get();
-        existingSeat.setSeat_status("Available");
-        return iSeatsService.saveAndFlush(existingSeat);
     }
 
     @RequestMapping(value = "delete-all", method = RequestMethod.DELETE)

@@ -2,23 +2,30 @@ package com.qa.persistence.domain;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
+import java.util.List;
+
 @Entity
 public class Booking  extends Transaction{
 
     private String name;
-    private Long seat_nums;
     private String time;
     private String booking_date;
     private String booking_movie;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Seats> seats;
+
     protected Booking(){}
 
-    public Booking(String name, Long seat_nums, String time, String booking_date, String booking_movie) {
+    public Booking(String name, String time, String booking_date, String booking_movie, List<Seats> seats) {
         this.name = name;
-        this.seat_nums = seat_nums;
         this.time = time;
         this.booking_date = booking_date;
         this.booking_movie = booking_movie;
+        this.seats = seats;
     }
 
     public String getName() {
@@ -27,14 +34,6 @@ public class Booking  extends Transaction{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getSeat_nums() {
-        return seat_nums;
-    }
-
-    public void setSeat_nums(Long seat_nums) {
-        this.seat_nums = seat_nums;
     }
 
     public String getTime() {
@@ -61,14 +60,23 @@ public class Booking  extends Transaction{
         this.booking_movie = booking_movie;
     }
 
+    public List<Seats> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(List<Seats> seats) {
+        this.seats = seats;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
                 "name='" + name + '\'' +
-                ", seat_nums=" + seat_nums +
                 ", time='" + time + '\'' +
                 ", booking_date='" + booking_date + '\'' +
                 ", booking_movie='" + booking_movie + '\'' +
+                ", seats=" + seats +
                 '}';
     }
+
 }

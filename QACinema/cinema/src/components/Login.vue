@@ -1,30 +1,32 @@
 <template>
 <div class="parallax">
   <navigation/>
+<div style="padding: 5% 0 17% 0">
   <table width="60%" border="0" align="center">
     <div class="row">
-  <div id="login_div" class="main-div" style="background-color:#b7b3bb;" >
-    <h3>Log In</h3>
-    <input type="email" placeholder="Email..." id="email_field" />
-    <input type="password" placeholder="Password..." id="password_field" />
-    <button v-on:click="loginA()" >Login to Account</button>
-  <div id="user_div" class="loggedin-div" style="background-color:#b7b3bb;">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome. You're currently logged in.</p>
-    <button onclick="logout()">Logout</button>
-  </div>
-  </div>
+      <div id="login_div" class="main-div" style="background-color:#b7b3bb;" >
+        <h3>Log In</h3>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
+        <button v-on:click="loginA()" >Login to Account</button>
+        <div id="user_div" class="loggedin-div" style="background-color:#b7b3bb;">
+          <h3>Welcome User</h3>
+          <p id="user_para">Welcome. You're currently logged in.</p>
+          <button onclick="logout()">Logout</button>
+        </div>
+      </div>
 
-  <table width="60%" border="0" align="center">
-  <div id="login_div1" class="main-div" style="background-color:#b7b3bb;">
-    <h3>Sign Up</h3>
-    <input type="email" placeholder="Email..." id="email_field1" />
-    <input type="password" placeholder="Password..." id="password_field1" />
-    <button onclick="createAccount()">Create an Account</button>
-  </div>
-  </table>
+      <table width="60%" border="0" align="center">
+        <div id="login_div1" class="main-div" style="background-color:#b7b3bb;">
+          <h3>Sign Up</h3>
+          <input type="email" placeholder="Email..." id="email_field1" />
+          <input type="password" placeholder="Password..." id="password_field1" />
+          <button onclick="createAccount()">Create an Account</button>
+        </div>
+      </table>
     </div>
   </table>
+</div>
 
   <Footer/>
 </div>

@@ -18,7 +18,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin:0;
-  /*background-color: black;*/
   height: 100;
 }
 html, body {
@@ -33,5 +32,6 @@ html, body {
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
+
 }
 </style>

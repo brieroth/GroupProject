@@ -17,4 +17,6 @@ public interface TransactionService extends JpaRepository<Transaction, Long> {
     @Query("SELECT  e FROM Transaction e WHERE e.name = :name")
     List<Transaction>findByName(@Param("name") String name);
 
+    @Query("SELECT e from Transaction e WHERE e.booking_date = :bookingdate AND e.time = :time")
+    List<Transaction>findByDateAndTime(@Param("bookingdate") String bookingdate,@Param("time") String time);
 }

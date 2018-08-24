@@ -5,11 +5,14 @@ import com.qa.persistence.domain.Booking;
 import com.qa.persistence.domain.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.awt.print.Book;
 import java.util.List;
 
 @RestController
 @RequestMapping("/booking")
 @ResponseBody
+@CrossOrigin(origins = "http://localhost:8081")
 public class BookingController {
 
     @Autowired
@@ -34,6 +37,16 @@ public class BookingController {
         List<Transaction> existingTransaction = transactionService.findByName(name);
         return existingTransaction;
     }
+
+
+@RequestMapping(value="/getAllBooked/{date}/{time}", method = RequestMethod.GET)
+public List<Transaction> getAllBooked(@PathVariable String date, @PathVariable String time){
+   List<Transaction> booked = transactionService.findByDateAndTime(date,time);
+
+   return booked;
+
+
+}
 
     @RequestMapping(value = "/delete-all", method = RequestMethod.DELETE)
     public void deleteAll(){

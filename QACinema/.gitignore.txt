@@ -3,4 +3,5 @@ target
 .classpath
 .factorypath
 .project
+.idea
 bin

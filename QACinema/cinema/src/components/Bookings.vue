@@ -13,10 +13,10 @@
       <form name="bookto" id="test" action="#">
         <h3>Personal details</h3>
         Name of person booking: <input type="text" name="name" v-model ="details.name" ><br>
+
         <h3> Film details</h3>
         <p>Film to watch:</p>
-
-        <select id ="selectbox" name="booking_movie" class="form-control" v-model ="details.booking_movie">
+        <select id ="selectbox" name="booking_movie" class="form-control" v-model ="details.booking_movie" width="10%">
           <option>Select</option>
           <option value="Avengers: Infinity wars">Avengers: Infinity wars</option>
           <option value="Deadpool">Deadpool</option>
@@ -33,8 +33,8 @@
         <label for="bookingDate">Enter date: </label>
         <input type="date" id="bookingDate" name="booking_date" min="2018-01-01" max="2019-01-01" required v-model ="details.booking_date">
         <span class="validity"></span><br>
-        <button type="submit" name="submit" value="Submit" v-on:click="addBooking()"></button>
-      </form>
+      </form><br>
+      <button type="button" class="submit" v-on:click="addBooking()">Submit</button>
           </div>
     </body>
   </div>
@@ -55,9 +55,17 @@ export default {
   methods: {
     addBooking() {
     let url = 'http://localhost:8080/booking/book';
-    axios.post(url, this.details).then((response) => {
-      console.log(response)
-    })}
+    axios.post(url, {
+        name: this.details.name,
+        time: this.details.time,
+        booking_date: this.details.booking_date,
+        booking_movie: this.details.booking_movie
+    }
+    // this.details).then((response) => {
+    //   console.log(response)
+    //   console.log(details)
+    // }
+       )}
   }
   }
 
